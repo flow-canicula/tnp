@@ -57,16 +57,14 @@ export default function ContactForm({ locale, messages: m }: ContactFormProps) {
     data.append('locale', locale);
 
     try {
-      // TODO: set form endpoint — replace with your Formspree URL: https://formspree.io/f/YOUR_FORM_ID
-      const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      const res = await fetch('https://formspree.io/f/mpqeyjea', {
         method: 'POST',
         body: data,
         headers: { Accept: 'application/json' },
       });
       if (res.ok) setSubmitted(true);
     } catch {
-      // silently fail — form endpoint not yet configured
-      setSubmitted(true); // optimistic for now
+      alert('Something went wrong. Please email us directly at thuy@tnpgr.vn');
     } finally {
       setSubmitting(false);
     }
