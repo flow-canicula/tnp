@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Mail, Phone, MapPin, Clock, ArrowRight } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
 import SchemaJsonLd from '@/components/SchemaJsonLd';
@@ -97,6 +98,8 @@ export default async function ContactPage({
     },
   };
 
+  const base = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
   const nextSteps = [
     { num: '01', text: c.sidebar.nextSteps.step1 },
     { num: '02', text: c.sidebar.nextSteps.step2 },
@@ -108,18 +111,48 @@ export default async function ContactPage({
       <SchemaJsonLd schema={[contactSchema, breadcrumbSchema]} />
 
       {/* Section: Page Hero */}
-      <section className="py-20 bg-forest-900">
-        <div className="container-wide text-center">
-          <p className="section-label text-timber-300 mb-4">TNP</p>
-          <h1 className="font-serif text-display-xl text-white leading-tight mb-2">
-            {c.hero.title}
-          </h1>
-          <p className="font-serif text-display-md text-timber-300 mb-6">
-            {c.hero.titleAccent}
-          </p>
-          <p className="text-stone-400 text-lg max-w-2xl mx-auto">
-            {c.hero.subtitle}
-          </p>
+      <section className="relative min-h-[52vh] flex items-center overflow-hidden bg-forest-950">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image
+            src={`${base}/assets/images/portfolio/portfolio-7.jpg`}
+            alt=""
+            fill
+            priority
+            aria-hidden="true"
+            className="object-cover object-center opacity-35"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-forest-950/90 via-forest-950/70 to-forest-900/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-forest-950/60 via-transparent to-transparent" />
+        </div>
+
+        {/* Side accent strip — finished installation glimpse */}
+        <div className="absolute right-0 top-0 bottom-0 w-[38%] hidden lg:block">
+          <Image
+            src={`${base}/assets/images/installation/installation-3.jpg`}
+            alt=""
+            fill
+            aria-hidden="true"
+            className="object-cover object-left opacity-30"
+            sizes="38vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-forest-950 to-transparent" />
+        </div>
+
+        <div className="relative container-wide py-24">
+          <div className="max-w-2xl">
+            <p className="section-label text-timber-300 mb-5">TNP — Biên Hòa, Vietnam</p>
+            <h1 className="font-serif text-display-xl text-white leading-tight mb-2">
+              {c.hero.title}
+            </h1>
+            <p className="font-serif text-display-md text-timber-300 mb-6">
+              {c.hero.titleAccent}
+            </p>
+            <p className="text-stone-400 text-lg leading-relaxed max-w-xl">
+              {c.hero.subtitle}
+            </p>
+          </div>
         </div>
       </section>
 

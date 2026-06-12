@@ -211,9 +211,9 @@ export default function PricingPageClient({ locale, messages: p, cta }: PricingP
             <h2 className="font-serif text-3xl lg:text-4xl text-white">{p.included.title}</h2>
           </div>
 
-          <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          <ul className="flex flex-wrap justify-center gap-4">
             {p.included.items.map((item: string, i: number) => (
-              <li key={i} className="group relative rounded-2xl overflow-hidden h-36 lg:h-40 cursor-default">
+              <li key={i} className="group relative rounded-2xl overflow-hidden h-40 sm:h-44 cursor-default w-[calc(50%-8px)] sm:w-[calc(33.333%-11px)] lg:w-[calc(25%-12px)]">
                 {/* Background image */}
                 <Image
                   src={includedImages[i % includedImages.length]}
