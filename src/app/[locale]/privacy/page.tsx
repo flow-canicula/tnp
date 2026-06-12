@@ -16,6 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const messages = (await import(`@/messages/${locale}.json`)).default;
   const p = messages.privacy;
   const baseUrl = 'https://tnpgr.vn';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? baseUrl;
   return {
     title: p.meta.title,
     description: p.meta.description,
@@ -25,13 +26,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: p.meta.description,
       url: `${baseUrl}/${locale}/privacy/`,
       siteName: 'TNP',
-      images: [{ url: `${baseUrl}/${locale}/privacy/opengraph-image.png`, width: 1200, height: 630 }],
+      images: [{ url: `${siteUrl}/${locale}/privacy/opengraph-image.png`, width: 1200, height: 630 }],
     },
     twitter: {
       card: 'summary_large_image',
       title: p.meta.title,
       description: p.meta.description,
-      images: [`${baseUrl}/${locale}/privacy/opengraph-image.png`],
+      images: [`${siteUrl}/${locale}/privacy/opengraph-image.png`],
     },
   };
 }

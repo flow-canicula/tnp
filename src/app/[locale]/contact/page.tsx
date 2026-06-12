@@ -18,6 +18,7 @@ export async function generateMetadata({
   const msgs = (await import(`@/messages/${locale}.json`)).default;
   const meta = msgs.meta.contact;
   const baseUrl = 'https://tnpgr.vn';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? baseUrl;
   const ogLocale = locale === 'vi' ? 'vi_VN' : locale === 'ja' ? 'ja_JP' : 'en_US';
 
   return {
@@ -42,13 +43,13 @@ export async function generateMetadata({
       siteName: 'TNP',
       locale: ogLocale,
       type: 'website',
-      images: [{ url: `${baseUrl}/${locale}/contact/opengraph-image.png`, width: 1200, height: 630, alt: meta.title }],
+      images: [{ url: `${siteUrl}/${locale}/contact/opengraph-image.png`, width: 1200, height: 630, alt: meta.title }],
     },
     twitter: {
       card: 'summary_large_image',
       title: meta.title,
       description: meta.description,
-      images: [`${baseUrl}/${locale}/contact/opengraph-image.png`],
+      images: [`${siteUrl}/${locale}/contact/opengraph-image.png`],
     },
     other: {
       'geo.region': 'VN-39',

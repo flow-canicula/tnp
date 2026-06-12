@@ -34,6 +34,7 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: /tnp
+          NEXT_PUBLIC_SITE_URL: https://flowcanicula-digipay.github.io/tnp
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
