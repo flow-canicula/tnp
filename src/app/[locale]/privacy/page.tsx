@@ -15,10 +15,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const messages = (await import(`@/messages/${locale}.json`)).default;
   const p = messages.privacy;
+  const baseUrl = 'https://tnpgr.vn';
   return {
     title: p.meta.title,
     description: p.meta.description,
     robots: { index: false, follow: true },
+    openGraph: {
+      title: p.meta.title,
+      description: p.meta.description,
+      url: `${baseUrl}/${locale}/privacy/`,
+      siteName: 'TNP',
+      images: [{ url: `${baseUrl}/${locale}/privacy/opengraph-image.png`, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: p.meta.title,
+      description: p.meta.description,
+      images: [`${baseUrl}/${locale}/privacy/opengraph-image.png`],
+    },
   };
 }
 

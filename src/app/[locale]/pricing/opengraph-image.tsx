@@ -32,5 +32,5 @@ export default async function OgImage({
 }) {
   const { locale } = await params;
   const c = content[locale as keyof typeof content] ?? content.en;
-  return buildOgImage(locale, 'assets/images/materials/materials-3.jpg', c);
+  return buildOgImage(locale, 'assets/images/installation/installation-4.jpg', c);
 }
