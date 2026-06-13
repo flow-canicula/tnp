@@ -44,13 +44,13 @@ export async function generateMetadata({
       siteName: 'TNP',
       locale: ogLocale,
       type: 'website',
-      images: [{ url: `${siteUrl}/assets/images/company/company-1.jpg`, width: 1200, height: 800, alt: meta.title }],
+      images: [{ url: `${siteUrl}/assets/og/og-default.png`, width: 1200, height: 630, alt: meta.title }],
     },
     twitter: {
       card: 'summary_large_image',
       title: meta.title,
       description: meta.description,
-      images: [`${siteUrl}/assets/images/company/company-1.jpg`],
+      images: [`${siteUrl}/assets/og/og-default.png`],
     },
     other: {
       'geo.region': 'VN-39',
