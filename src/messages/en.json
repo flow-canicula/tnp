@@ -174,7 +174,7 @@
       }
     },
     "trust": {
-      "stat1": { "value": "500+", "label": "Projects completed" },
+      "stat1": { "value": "300+", "label": "Projects completed" },
       "stat2": { "value": "Japan & beyond", "label": "Export destinations" },
       "stat3": { "value": "Biên Hòa, Vietnam", "label": "Our factory" },
       "testimonialNote": "{/* TODO: add real testimonials/stats */}"

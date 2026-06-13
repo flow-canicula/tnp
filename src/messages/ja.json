@@ -174,7 +174,7 @@
       }
     },
     "trust": {
-      "stat1": { "value": "500件以上", "label": "完了プロジェクト" },
+      "stat1": { "value": "300件以上", "label": "完了プロジェクト" },
       "stat2": { "value": "日本・世界へ", "label": "輸出実績" },
       "stat3": { "value": "ビエンホア, ベトナム", "label": "自社工場" },
       "testimonialNote": "{/* TODO: 実際のお客様の声・実績を追加 */}"

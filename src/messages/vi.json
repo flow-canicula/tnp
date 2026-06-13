@@ -173,7 +173,7 @@
         }
       }
     },
-    "trust": {
+    "trust": { 
       "stat1": { "value": "300+", "label": "Dự án đã hoàn thành" },
       "stat2": { "value": "Nhật Bản & quốc tế", "label": "Thị trường xuất khẩu" },
       "stat3": { "value": "Biên Hòa, Việt Nam", "label": "Xưởng sản xuất" },
