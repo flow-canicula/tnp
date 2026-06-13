@@ -8,7 +8,7 @@
  */
 
 import sharp from 'sharp';
-import { mkdirSync } from 'fs';
+import { mkdirSync, copyFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -130,6 +130,13 @@ async function main() {
   console.log(
     `✓ OG image written: public/assets/og/og-default.png  (${(out.size / 1024).toFixed(1)} KB)  ${W}×${H}`,
   );
+
+  // Mirror to out/assets/og/ if the export directory already exists
+  const outExportDir = join(ROOT, 'out', 'assets', 'og');
+  if (existsSync(outExportDir)) {
+    copyFileSync(outPath, join(outExportDir, 'og-default.png'));
+    console.log('✓ Mirrored → out/assets/og/og-default.png');
+  }
 }
 
 main().catch(err => { console.error(err); process.exit(1); });
