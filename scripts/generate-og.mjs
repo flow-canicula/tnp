@@ -49,14 +49,14 @@ function buildOverlay() {
       const evy = Math.min(ny, 1 - ny) * 2;
       const vig = 1 - Math.min(1, evx ** 0.55) * Math.min(1, evy ** 0.55);
 
-      // Dark overlay alpha increases at edges, reduces where glow is
-      const baseAlpha = 44 + vig * 135;
-      const alpha     = Math.max(0, Math.min(255, Math.round(baseAlpha - glow * 90)));
+      // Light vignette — soft edge darkening only, not a blackout
+      const baseAlpha = 15 + vig * 70;
+      const alpha     = Math.max(0, Math.min(255, Math.round(baseAlpha - glow * 40)));
 
       // Warm amber tint from glow + accent
-      const warmR = glow * 130 + hi * 52;
-      const warmG = glow * 76  + hi * 28;
-      const warmB = glow * 18  + hi * 8;
+      const warmR = glow * 90 + hi * 40;
+      const warmG = glow * 52 + hi * 22;
+      const warmB = glow * 12 + hi * 6;
 
       buf[i]   = Math.min(255, Math.round(warmR));
       buf[i+1] = Math.min(255, Math.round(warmG));
@@ -103,10 +103,10 @@ async function main() {
 
   mkdirSync(outDir, { recursive: true });
 
-  // 1) Resize + crop photo to OG dimensions, then darken
+  // 1) Resize + crop photo to OG dimensions — keep it bright so the team is visible
   const base = await sharp(photoPath)
     .resize(W, H, { fit: 'cover', position: 'centre' })
-    .modulate({ brightness: 0.52, saturation: 0.80 })
+    .modulate({ brightness: 0.82, saturation: 0.90 })
     .png()
     .toBuffer();
 
