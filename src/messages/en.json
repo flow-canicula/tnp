@@ -30,6 +30,12 @@
       "getQuote": "Get a Quote"
     },
     "footer": {
+      "scene": {
+        "location": "Biên Hòa · Đồng Nai · Việt Nam",
+        "viLabel": "Gỗ tự nhiên · Tay nghề Việt Nam",
+        "materials": "ヒノキ · ケヤキ · 無垢材",
+        "craft": "Solid wood. Honest craft."
+      },
       "brand": {
         "tagline": "Supplying solid wood flooring and timber furniture.",
         "social": "Follow us"

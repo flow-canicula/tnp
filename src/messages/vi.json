@@ -30,6 +30,12 @@
       "getQuote": "Nhận báo giá"
     },
     "footer": {
+      "scene": {
+        "location": "Biên Hòa · Đồng Nai · Việt Nam",
+        "viLabel": "Gỗ tự nhiên · Tay nghề Việt Nam",
+        "materials": "ヒノキ · ケヤキ · 無垢材",
+        "craft": "Mỗi sản phẩm, một tác phẩm."
+      },
       "brand": {
         "tagline": "Cung cấp sàn gỗ tự nhiên và nội thất gỗ.",
         "social": "Theo dõi chúng tôi"

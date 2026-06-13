@@ -30,6 +30,12 @@
       "getQuote": "お見積もり"
     },
     "footer": {
+      "scene": {
+        "location": "Biên Hòa · Đồng Nai · Việt Nam",
+        "viLabel": "Gỗ tự nhiên · Tay nghề Việt Nam",
+        "materials": "ヒノキ · ケヤキ · 無垢材",
+        "craft": "木の温もり、職人の誇り。"
+      },
       "brand": {
         "tagline": "無垢材フローリングと木製家具をお届けします。",
         "social": "フォローする"
