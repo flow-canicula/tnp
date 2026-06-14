@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '@/lib/siteUrl';
 import Link from 'next/link';
 import { ArrowLeft, Shield } from 'lucide-react';
 import { routing } from '@/i18n/routing';
@@ -15,8 +16,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const messages = (await import(`@/messages/${locale}.json`)).default;
   const p = messages.privacy;
+  const siteUrl = SITE_URL;
   const baseUrl = 'https://tnpgr.vn';
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? baseUrl;
   return {
     title: p.meta.title,
     description: p.meta.description,

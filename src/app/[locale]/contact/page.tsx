@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '@/lib/siteUrl';
 import Image from 'next/image';
 import { Mail, Phone, MapPin, Clock, ArrowRight } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
@@ -17,8 +18,8 @@ export async function generateMetadata({
   const { locale } = await params;
   const msgs = (await import(`@/messages/${locale}.json`)).default;
   const meta = msgs.meta.contact;
+  const siteUrl = SITE_URL;
   const baseUrl = 'https://tnpgr.vn';
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? baseUrl;
   const ogLocale = locale === 'vi' ? 'vi_VN' : locale === 'ja' ? 'ja_JP' : 'en_US';
 
   return {
