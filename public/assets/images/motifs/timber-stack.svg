@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Stacked raw timber, freshly sourced — the first stage, not a generic crate -->
+  <ellipse cx="9" cy="11" rx="4.2" ry="3.4" fill="#E2C896"/>
+  <ellipse cx="9" cy="11" rx="2" ry="1.5" fill="#B86F1C"/>
+  <rect x="9" y="11" width="22" height="6" fill="#D9B872"/>
+  <ellipse cx="13" cy="18" rx="4.6" ry="3.7" fill="#D9B872"/>
+  <ellipse cx="13" cy="18" rx="2.2" ry="1.6" fill="#8B5A2B"/>
+  <rect x="13" y="18" width="20" height="6.6" fill="#C49A6C"/>
+  <ellipse cx="8" cy="26" rx="4.8" ry="3.8" fill="#B86F1C"/>
+  <ellipse cx="8" cy="26" rx="2.2" ry="1.6" fill="#6E4D22"/>
+  <rect x="8" y="26" width="21" height="6.8" fill="#A4774A"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Kiln chamber drying a milled plank, heat shimmer rising — the
+       drying-and-milling stage, not a generic oven glyph -->
+  <rect x="5" y="10" width="26" height="20" rx="2" fill="#8B5A2B"/>
+  <rect x="8" y="13" width="20" height="14" rx="1" fill="#16231C"/>
+  <rect x="11" y="22" width="14" height="2.6" fill="#E2C896"/>
+  <path fill="#D98A2B" d="M14 19.5c1.4-1.7 1-2.9 0-4.2 1.8 0.4 3 2 2 4.2Z"/>
+  <path fill="#FFCD00" d="M14.6 19.2c0.8-1 0.6-1.7 0-2.4 1 0.2 1.7 1.1 1.1 2.4Z"/>
+  <path fill="#D98A2B" d="M20.5 18.3c1.4-1.7 1-2.9 0-4.2 1.8 0.4 3 2 2 4.2Z"/>
+  <path fill="#FFCD00" d="M21.1 18c0.8-1 0.6-1.7 0-2.4 1 0.2 1.7 1.1 1.1 2.4Z"/>
+  <circle cx="29" cy="14" r="1.1" fill="#DA251D"/>
+</svg>

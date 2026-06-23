@@ -3,17 +3,31 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Check, ChevronDown, StretchHorizontal, Armchair, Building2 } from 'lucide-react';
+import { ArrowRight, Check, ChevronDown } from 'lucide-react';
 import Reveal from './Reveal';
+import StatementBanner from './StatementBanner';
 
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
-const tierIcons = [StretchHorizontal, Armchair, Building2] as const;
 const tierKeys = ['flooring', 'furniture', 'complete'] as const;
+// One literal icon per product line — flooring planks, joined furniture,
+// the full room build — replacing generic ruler/chair/building glyphs.
+const tierHeaderMotifs = [
+  `${base}/assets/images/motifs/flooring-plank.svg`,
+  `${base}/assets/images/motifs/furniture-joinery.svg`,
+  `${base}/assets/images/motifs/complete-build.svg`,
+];
 const tierImages = [
   `${base}/assets/images/materials/materials-2.jpg`,
   `${base}/assets/images/creation/creation.jpg`,
   `${base}/assets/images/portfolio/portfolio-2.jpg`,
+];
+// Motifs already drawn for these exact tiers — first conversation (tea),
+// the full design package (Đông Sơn drum sun), the complete build (stilt house).
+const tierMotifs = [
+  `${base}/assets/images/motifs/pricing-consult.svg`,
+  `${base}/assets/images/motifs/pricing-design.svg`,
+  `${base}/assets/images/motifs/pricing-fullservice.svg`,
 ];
 
 const faqKeys = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7'] as const;
@@ -26,6 +40,17 @@ const includedImages = [
   `${base}/assets/images/installation/installation-6.jpg`,
   `${base}/assets/images/installation/installation-3.jpg`,
   `${base}/assets/images/installation/installation-5.jpg`,
+];
+// One motif per included stage — sourcing, kiln/mill, in-house build, QC,
+// protected delivery, on-site install, export crating. Same order as items.
+const includedMotifs = [
+  `${base}/assets/images/motifs/timber-stack.svg`,
+  `${base}/assets/images/motifs/kiln-mill.svg`,
+  `${base}/assets/images/motifs/factory-roofline.svg`,
+  `${base}/assets/images/motifs/inspect-mark.svg`,
+  `${base}/assets/images/motifs/pallet-wrap.svg`,
+  `${base}/assets/images/motifs/installation.svg`,
+  `${base}/assets/images/motifs/export-crate.svg`,
 ];
 
 type TierKey = (typeof tierKeys)[number];
@@ -48,6 +73,7 @@ interface FaqEntry {
 
 interface PricingMessages {
   hero: { title: string; titleAccent: string; subtitle: string };
+  statement: { eyebrow: string; line1: string; line2: string; sub: string };
   tiers: {
     title: string;
     flooring: TierMessages;
@@ -61,6 +87,7 @@ interface PricingMessages {
     q1: FaqEntry; q2: FaqEntry; q3: FaqEntry; q4: FaqEntry;
     q5: FaqEntry; q6: FaqEntry; q7: FaqEntry;
   };
+  finalCta: { title: string; subtitle: string; imageAlt: string };
 }
 
 interface CtaMessages {
@@ -116,18 +143,25 @@ export default function PricingPageClient({ locale, messages: p, cta }: PricingP
         </div>
       </section>
 
+      {/* Section: Bold Statement */}
+      <StatementBanner
+        eyebrow={p.statement.eyebrow}
+        lines={[p.statement.line1, p.statement.line2]}
+        sub={p.statement.sub}
+      />
+
       {/* Section: Pricing Tiers */}
       <section className="section-padding bg-cream-50">
         <div className="container-wide">
           <Reveal>
-            <header className="text-center mb-14">
+            <header className="flex items-end gap-5 justify-center text-center mb-14">
+              <span className="font-serif text-7xl lg:text-8xl font-bold text-cream-200 leading-none select-none">01</span>
               <h2 className="section-title">{p.tiers.title}</h2>
             </header>
           </Reveal>
 
           <div className="grid md:grid-cols-3 gap-6 items-start">
             {tierKeys.map((key: TierKey, idx) => {
-              const Icon = tierIcons[idx];
               const tier = p.tiers[key];
               const isSelected = selectedTier === key;
               const isHighlighted = isSelected || (selectedTier === null && idx === 0);
@@ -140,10 +174,12 @@ export default function PricingPageClient({ locale, messages: p, cta }: PricingP
                     aria-pressed={isSelected}
                     onClick={() => setSelectedTier(isSelected ? null : key)}
                     onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSelectedTier(isSelected ? null : key); } }}
-                    className={`relative rounded-2xl overflow-hidden flex flex-col bg-white cursor-pointer transition-all duration-200 ${
-                      isHighlighted
-                        ? 'ring-2 ring-timber-500 shadow-2xl scale-[1.01]'
-                        : 'border border-cream-200 shadow-lg hover:shadow-xl hover:border-timber-200'
+                    className={`group relative rounded-2xl overflow-hidden flex flex-col bg-white cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-2 ${
+                      isSelected
+                        ? 'ring-2 ring-timber-500 scale-[1.03] animate-ring-glow-pulse'
+                        : isHighlighted
+                          ? 'ring-2 ring-timber-500 shadow-2xl scale-[1.01]'
+                          : 'border border-cream-200 shadow-lg hover:shadow-2xl hover:border-timber-200'
                     }`}
                   >
                     {tier.badge && !isSelected && (
@@ -152,25 +188,34 @@ export default function PricingPageClient({ locale, messages: p, cta }: PricingP
                       </div>
                     )}
                     {isSelected && (
-                      <div className="absolute top-4 right-4 bg-timber-500 text-white text-xs font-bold px-3 py-1.5 rounded-full z-10 flex items-center gap-1.5">
+                      <div className="absolute top-4 right-4 bg-timber-500 text-white text-xs font-bold px-3 py-1.5 rounded-full z-10 flex items-center gap-1.5 animate-pop-in">
                         <Check className="w-3 h-3" aria-hidden="true" />
                         Selected
                       </div>
                     )}
 
-                    <div className="relative h-48 bg-cream-100">
+                    <div className="relative h-48 bg-cream-100 overflow-hidden">
                       <Image
                         src={tierImages[idx]}
                         alt={tier.name}
                         fill
-                        className="object-cover"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                         sizes="(max-width: 768px) 100vw, 33vw"
                       />
+                      <div
+                        className={`absolute top-3 left-3 w-10 h-10 rounded-full bg-forest-950/70 backdrop-blur-sm p-1.5 shadow-lg transition-transform duration-300 group-hover:rotate-12 ${
+                          isSelected ? 'animate-pop-in' : ''
+                        }`}
+                      >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={tierMotifs[idx]} alt="" aria-hidden="true" className="w-full h-full" />
+                      </div>
                     </div>
 
                     <div className="p-6 flex flex-col flex-1">
-                      <div className="flex items-center gap-2 mb-3">
-                        <Icon className={`w-5 h-5 ${isSelected ? 'text-timber-600' : 'text-timber-500'}`} aria-hidden="true" />
+                      <div className="flex items-center gap-2.5 mb-3">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={tierHeaderMotifs[idx]} alt="" aria-hidden="true" className="w-6 h-6 shrink-0" />
                         <h3 className="font-serif text-xl font-semibold text-forest-900">
                           {tier.name}
                         </h3>
@@ -182,7 +227,13 @@ export default function PricingPageClient({ locale, messages: p, cta }: PricingP
                       <div className="border-t border-cream-100 pt-5">
                         <p className="text-xs text-stone-400 uppercase tracking-wide mb-1">{tier.priceNote}</p>
                         {/* TODO: set price per m² / per project */}
-                        <p className="font-serif text-2xl font-bold text-forest-900 mb-5">—</p>
+                        <p
+                          className={`font-serif text-2xl font-bold mb-5 ${
+                            isSelected ? 'gold-shimmer-text animate-gold-shimmer' : 'text-forest-900'
+                          }`}
+                        >
+                          —
+                        </p>
                         <Link
                           href={`/${locale}/contact?type=${key}`}
                           onClick={(e) => e.stopPropagation()}
@@ -222,16 +273,19 @@ export default function PricingPageClient({ locale, messages: p, cta }: PricingP
 
         <div className="relative container-wide">
           <Reveal>
-            <div className="text-center mb-12">
-              <p className="section-label text-timber-300 mb-3">TNP</p>
-              <h2 className="font-serif text-3xl lg:text-4xl text-white">{p.included.title}</h2>
+            <div className="flex items-end gap-5 justify-center text-center mb-12">
+              <span className="font-serif text-7xl lg:text-8xl font-bold text-white/10 leading-none select-none">02</span>
+              <div>
+                <p className="section-label text-timber-300 mb-3">TNP</p>
+                <h2 className="font-serif text-3xl lg:text-4xl text-white">{p.included.title}</h2>
+              </div>
             </div>
           </Reveal>
 
           <ul className="flex flex-wrap justify-center gap-4">
             {p.included.items.map((item: string, i: number) => (
               <li key={i} className="group w-[calc(50%-8px)] sm:w-[calc(33.333%-11px)] lg:w-[calc(25%-12px)]">
-                <Reveal delay={(i % 4) * 0.1} className="relative rounded-2xl overflow-hidden h-40 sm:h-44 cursor-default">
+                <Reveal delay={(i % 4) * 0.1} className="relative rounded-2xl overflow-hidden h-44 sm:h-48 cursor-default transition-transform duration-300 hover:-translate-y-1.5">
                   {/* Background image */}
                   <Image
                     src={includedImages[i % includedImages.length]}
@@ -246,11 +300,14 @@ export default function PricingPageClient({ locale, messages: p, cta }: PricingP
                   {/* Hover amber border */}
                   <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10 group-hover:ring-timber-400/70 transition-all duration-300" />
 
+                  {/* Motif badge */}
+                  <div className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 backdrop-blur-sm p-1.5 shadow-lg transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={includedMotifs[i]} alt="" aria-hidden="true" className="w-full h-full" />
+                  </div>
+
                   {/* Content */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 flex items-end gap-3">
-                    <div className="flex-shrink-0 w-7 h-7 rounded-full bg-timber-500/80 group-hover:bg-timber-500 flex items-center justify-center transition-colors duration-300">
-                      <Check className="w-3.5 h-3.5 text-white" aria-hidden="true" />
-                    </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
                     <span className="text-white text-sm font-medium leading-snug">{item}</span>
                   </div>
                 </Reveal>
@@ -263,10 +320,13 @@ export default function PricingPageClient({ locale, messages: p, cta }: PricingP
       {/* Section: FAQ */}
       <section className="section-padding bg-white">
         <div className="container-wide max-w-3xl">
-          <header className="text-center mb-12">
-            <p className="section-label mb-3">FAQ</p>
-            <h2 className="section-title mb-3">{p.faq.title}</h2>
-            <p className="text-stone-500">{p.faq.subtitle}</p>
+          <header className="flex items-end gap-5 justify-center text-center mb-12">
+            <span className="font-serif text-7xl lg:text-8xl font-bold text-cream-200 leading-none select-none">03</span>
+            <div>
+              <p className="section-label mb-3">FAQ</p>
+              <h2 className="section-title mb-3">{p.faq.title}</h2>
+              <p className="text-stone-500">{p.faq.subtitle}</p>
+            </div>
           </header>
 
           <dl className="flex flex-col gap-2">
@@ -301,18 +361,41 @@ export default function PricingPageClient({ locale, messages: p, cta }: PricingP
         </div>
       </section>
 
-      {/* Section: CTA */}
-      <section className="section-padding bg-cream-100">
-        <div className="container-wide text-center">
+      {/* Section: CTA — dark, glowing, with background photography */}
+      <section className="relative flex min-h-[48vh] items-center justify-center overflow-hidden bg-forest-950 px-6 py-20">
+        {/* Background image */}
+        <Image
+          src={`${base}/assets/images/portfolio/portfolio-3.jpg`}
+          alt={p.finalCta.imageAlt}
+          fill
+          aria-hidden="true"
+          className="object-cover scale-110 animate-ken-burns brightness-[0.55] saturate-[0.9]"
+          sizes="100vw"
+        />
+        {/* Gradient wash */}
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/85 to-forest-950/55" />
+        {/* Radial amber glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_70%,rgba(217,138,43,0.22),transparent_60%)]" />
+
+        {/* Floating glow motes */}
+        <div aria-hidden="true" className="animate-float absolute left-[18%] top-[30%] h-3 w-3 rounded-full bg-timber-400/70 blur-[2px]" style={{ animationDuration: '5s' }} />
+        <div aria-hidden="true" className="animate-float absolute right-[22%] top-[40%] h-2 w-2 rounded-full bg-timber-300/60 blur-[2px]" style={{ animationDuration: '7s', animationDelay: '1s' }} />
+        <div aria-hidden="true" className="animate-float absolute right-[32%] top-[20%] h-1.5 w-1.5 rounded-full bg-cream-100/70 blur-[1px]" style={{ animationDuration: '6s', animationDelay: '0.4s' }} />
+
+        <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center text-center">
           <Reveal delay={0}>
-            <h2 className="section-title mb-4">Ready to start?</h2>
+            <span aria-hidden="true" className="block h-8 w-[3px] bg-timber-400 mx-auto mb-5" />
+          </Reveal>
+          <Reveal delay={0.05}>
+            <p className="section-label text-timber-300 mb-4">TNP</p>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="text-stone-500 max-w-lg mx-auto mb-8">
-              Tell us about your space and we&apos;ll get back within 48 hours with a free quote.
-            </p>
+            <h2 className="font-serif text-display-lg text-white mb-4">{p.finalCta.title}</h2>
           </Reveal>
-          <Reveal delay={0.2}>
+          <Reveal delay={0.18}>
+            <p className="text-stone-300 max-w-lg mx-auto mb-8">{p.finalCta.subtitle}</p>
+          </Reveal>
+          <Reveal delay={0.26}>
             <Link
               href={selectedTier ? `/${locale}/contact?type=${selectedTier}` : `/${locale}/contact`}
               className="btn-primary text-base px-8 py-4 transition-transform duration-300 hover:scale-105"

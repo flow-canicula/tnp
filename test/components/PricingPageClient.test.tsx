@@ -9,6 +9,8 @@ const tierMessages = {
 
 const messages = {
   hero: { title: 'Transparent pricing.', titleAccent: 'Flooring and furniture, end to end.', subtitle: 'Subtitle text.' },
+  statement: { eyebrow: 'Eyebrow', line1: 'Line one.', line2: 'Line two.', sub: 'Sub line.' },
+  finalCta: { title: 'Ready to start?', subtitle: 'Tell us about your space.', imageAlt: 'Finished installation' },
   tiers: {
     title: 'Our Services',
     flooring: { ...tierMessages, name: 'Solid Wood Flooring', badge: 'Most popular' },

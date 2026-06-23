@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- A lotus bloom resting inside a chop-mark ring — a quiet promise
+       of discretion, not a generic shield/lock glyph -->
+  <circle cx="18" cy="18" r="15.5" fill="none" stroke="#D98A2B" stroke-width="1.1"/>
+  <path fill="#7AB07C" d="M18 21C15.6 18 14.7 13.6 16.6 8 17.6 13 18.3 16.6 18 21Z"/>
+  <path fill="#5C8F5E" d="M18 21C21 19 23.8 15.4 23.6 10 21 13.4 19.1 16.8 18 21Z"/>
+  <path fill="#4F7A52" d="M18 21C15 19 12.2 15.4 12.4 10 15 13.4 16.9 16.8 18 21Z"/>
+  <circle cx="18" cy="22.3" r="2" fill="#DA251D"/>
+  <circle cx="18" cy="22.3" r="0.8" fill="#FFCD00"/>
+</svg>

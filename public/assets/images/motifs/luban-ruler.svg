@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Thước Lỗ Ban, the geomancer's ruler used in Vietnamese building
+       trades to mark auspicious dimensions — a builder's measuring tool,
+       not a generic phone glyph -->
+  <g transform="rotate(-18 18 18)">
+    <rect x="3" y="15.5" width="30" height="6" rx="1.2" fill="#D98A2B"/>
+    <rect x="3" y="15.5" width="30" height="6" rx="1.2" fill="none" stroke="#B86F1C" stroke-width="0.6"/>
+    <rect x="3" y="15.5" width="6.4" height="6" fill="#DA251D" opacity="0.5"/>
+    <rect x="15.8" y="15.5" width="6.4" height="6" fill="#4F7A52" opacity="0.45"/>
+    <g stroke="#8B5A2B" stroke-width="0.6">
+      <line x1="7.2" y1="15.5" x2="7.2" y2="21.5"/>
+      <line x1="11.4" y1="15.5" x2="11.4" y2="21.5"/>
+      <line x1="15.6" y1="15.5" x2="15.6" y2="21.5"/>
+      <line x1="19.8" y1="15.5" x2="19.8" y2="21.5"/>
+      <line x1="24" y1="15.5" x2="24" y2="21.5"/>
+      <line x1="28.2" y1="15.5" x2="28.2" y2="21.5"/>
+    </g>
+  </g>
+</svg>

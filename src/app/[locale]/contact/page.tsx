@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import Image from 'next/image';
-import { Mail, Phone, MapPin, Clock, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
 import SchemaJsonLd from '@/components/SchemaJsonLd';
 import { routing } from '@/i18n/routing';
@@ -108,6 +108,15 @@ export default async function ContactPage({
     { num: '03', text: c.sidebar.nextSteps.step3 },
   ];
 
+  const sparkles = [
+    { left: '8%', top: '22%', size: 5, delay: '0s' },
+    { left: '92%', top: '18%', size: 3, delay: '0.6s' },
+    { left: '14%', top: '74%', size: 4, delay: '1.1s' },
+    { left: '85%', top: '68%', size: 6, delay: '0.3s' },
+    { left: '50%', top: '12%', size: 3, delay: '1.6s' },
+    { left: '96%', top: '46%', size: 4, delay: '0.9s' },
+  ];
+
   return (
     <>
       <SchemaJsonLd schema={[contactSchema, breadcrumbSchema]} />
@@ -128,6 +137,30 @@ export default async function ContactPage({
           <div className="absolute inset-0 bg-gradient-to-r from-forest-950/90 via-forest-950/70 to-forest-900/40" />
           <div className="absolute inset-0 bg-gradient-to-t from-forest-950/60 via-transparent to-transparent" />
         </div>
+
+        {/* Dual radial amber glow */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(217,138,43,0.22),transparent_60%)]" />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_85%_80%,rgba(217,138,43,0.14),transparent_55%)]" />
+
+        {/* Vertical accent bar */}
+        <span aria-hidden="true" className="absolute right-0 top-0 h-32 w-2.5 bg-timber-500" />
+
+        {/* Scattered sparkle motes */}
+        {sparkles.map(({ left, top, size, delay }, i) => (
+          <span
+            key={i}
+            aria-hidden="true"
+            className="animate-sparkle-pulse pointer-events-none absolute rounded-full bg-timber-200"
+            style={{
+              left,
+              top,
+              width: size,
+              height: size,
+              animationDelay: delay,
+              boxShadow: '0 0 8px 2px rgba(217,138,43,0.6)',
+            }}
+          />
+        ))}
 
         {/* Side accent strip — finished installation glimpse */}
         <div className="absolute right-0 top-0 bottom-0 w-[38%] hidden lg:block">
@@ -183,46 +216,68 @@ export default async function ContactPage({
             {/* Sidebar */}
             <aside className="flex flex-col gap-6 sticky top-24">
 
+              {/* Photo card */}
+              <figure className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-timber-200 shadow-lg">
+                <Image
+                  src={`${base}/assets/images/installation/installation-4.jpg`}
+                  alt={c.sidebar.photoAlt}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="380px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-forest-950/70 via-forest-950/0 to-transparent" />
+                <span aria-hidden="true" className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-cream-100/30" />
+              </figure>
+
               {/* Direct contact */}
               <div className="bg-white rounded-2xl border border-cream-200 shadow-sm p-6">
-                <h3 className="font-serif text-lg text-forest-900 mb-5">
+                <h3 className="flex items-center gap-2.5 font-serif text-lg text-forest-900 mb-5">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={`${base}/assets/images/motifs/envelope-seal.svg`} alt="" aria-hidden="true" className="w-5 h-5" />
                   {c.sidebar.directContact.title}
                 </h3>
                 <address className="not-italic flex flex-col gap-4">
                   <a href="mailto:thuyken52914@yahoo.com.vn" className="flex items-start gap-3 group">
-                    <Mail className="w-4 h-4 text-timber-500 mt-1 shrink-0" aria-hidden="true" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`${base}/assets/images/motifs/envelope-seal.svg`} alt="" aria-hidden="true" className="w-4 h-4 mt-1 shrink-0 opacity-80" />
                     <span className="text-sm text-stone-600 group-hover:text-timber-500 transition-colors">
                       thuyken52914@yahoo.com.vn
                     </span>
                   </a>
                   <a href="mailto:anhkiet3333@yahoo.com" className="flex items-start gap-3 group">
-                    <Mail className="w-4 h-4 text-timber-500 mt-1 shrink-0" aria-hidden="true" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`${base}/assets/images/motifs/envelope-seal.svg`} alt="" aria-hidden="true" className="w-4 h-4 mt-1 shrink-0 opacity-80" />
                     <span className="text-sm text-stone-600 group-hover:text-timber-500 transition-colors">
                       anhkiet3333@yahoo.com
                     </span>
                   </a>
                   <a href="mailto:thuy@tnpgr.vn" className="flex items-start gap-3 group">
-                    <Mail className="w-4 h-4 text-timber-500 mt-1 shrink-0" aria-hidden="true" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`${base}/assets/images/motifs/envelope-seal.svg`} alt="" aria-hidden="true" className="w-4 h-4 mt-1 shrink-0 opacity-80" />
                     <span className="text-sm text-stone-600 group-hover:text-timber-500 transition-colors">
                       thuy@tnpgr.vn
                     </span>
                   </a>
                   <a href="tel:+84903333729" className="flex items-start gap-3 group">
-                    <Phone className="w-4 h-4 text-timber-500 mt-1 shrink-0" aria-hidden="true" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`${base}/assets/images/motifs/hand-bell.svg`} alt="" aria-hidden="true" className="w-4 h-4 mt-1 shrink-0 opacity-80" />
                     <span className="text-sm text-stone-600 group-hover:text-timber-500 transition-colors">
                       +84 90 333 37 29
                     </span>
                   </a>
                   <div className="flex items-start gap-3">
-                    <MapPin className="w-4 h-4 text-timber-500 mt-1 shrink-0" aria-hidden="true" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`${base}/assets/images/motifs/viet-pin.svg`} alt="" aria-hidden="true" className="w-4 h-4 mt-1 shrink-0 opacity-80" />
                     <span className="text-sm text-stone-600 leading-relaxed">
                       Lô 35 đường số 9, Khu Công Nghiệp Tam Phước, Biên Hòa, Vietnam
                     </span>
                   </div>
+                  <span aria-hidden="true" className="block h-px w-full bg-gradient-to-r from-timber-300/50 via-timber-200/20 to-transparent" />
                   <div className="flex items-start gap-3">
-                    <Clock className="w-4 h-4 text-timber-500 mt-1 shrink-0" aria-hidden="true" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`${base}/assets/images/motifs/watch-drum.svg`} alt="" aria-hidden="true" className="w-4 h-4 mt-1 shrink-0 opacity-80" />
                     <span className="text-sm text-stone-400 italic">
-                      Monday — Saturday: 08:00 AM — 05:00 PM (GMT +7)
+                      {c.sidebar.directContact.hours}
                     </span>
                   </div>
                 </address>
@@ -253,6 +308,13 @@ export default async function ContactPage({
                 </div>
                 <p className="text-timber-100 text-sm leading-relaxed">{c.sidebar.trust.text}</p>
               </div>
+
+              {/* Privacy note */}
+              <p className="flex items-start gap-2.5 text-sm text-stone-400">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`${base}/assets/images/motifs/lotus-seal.svg`} alt="" aria-hidden="true" className="w-5 h-5 mt-0.5 shrink-0" />
+                {c.sidebar.privacyNote}
+              </p>
             </aside>
           </div>
         </div>

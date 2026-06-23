@@ -37,8 +37,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['Space Mono', 'Georgia', 'serif'],
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         'display-xl': ['clamp(2.75rem, 6vw, 5rem)', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
@@ -62,6 +62,12 @@ const config: Config = {
         'drift-up': 'driftUp 1.2s ease-out both',
         'ken-burns': 'kenBurns 16s ease-in-out infinite alternate',
         'underline-grow': 'underlineGrow 1.1s cubic-bezier(0.16,1,0.3,1) 0.6s both',
+        'motif-spin': 'motifSpin 90s linear infinite',
+        'ring-glow-pulse': 'ringGlowPulse 2.2s ease-in-out infinite',
+        'pop-in': 'popIn 0.45s cubic-bezier(0.34,1.56,0.64,1) both',
+        'gold-shimmer': 'goldShimmer 3s linear infinite',
+        'sparkle-pulse': 'sparklePulse 2.8s ease-in-out infinite',
+        'header-drop': 'headerDrop 0.7s cubic-bezier(0.16,1,0.3,1) 0.9s both',
       },
       keyframes: {
         fadeUp: {
@@ -101,6 +107,31 @@ const config: Config = {
         underlineGrow: {
           '0%': { transform: 'scaleX(0)' },
           '100%': { transform: 'scaleX(1)' },
+        },
+        motifSpin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        ringGlowPulse: {
+          '0%, 100%': { boxShadow: '0 0 0 0 rgba(169,123,62,0.38), 0 25px 50px -12px rgba(0,0,0,0.25)' },
+          '50%': { boxShadow: '0 0 0 9px rgba(169,123,62,0.14), 0 25px 50px -12px rgba(0,0,0,0.25)' },
+        },
+        popIn: {
+          '0%': { opacity: '0', transform: 'scale(0.5)' },
+          '60%': { opacity: '1', transform: 'scale(1.08)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+        goldShimmer: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '100%': { backgroundPosition: '200% 50%' },
+        },
+        sparklePulse: {
+          '0%, 100%': { opacity: '0.25', transform: 'scale(0.8)' },
+          '50%': { opacity: '1', transform: 'scale(1.15)' },
+        },
+        headerDrop: {
+          '0%': { opacity: '0', transform: 'translateY(-100%)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
     },

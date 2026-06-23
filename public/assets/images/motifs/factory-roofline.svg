@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- A sawtooth north-light workshop roof, the Biên Hòa factory floor —
+       not a generic factory-with-clouds glyph -->
+  <rect x="4" y="18.5" width="28" height="12.5" fill="#E2C896"/>
+  <path fill="#B86F1C" d="M4 18.5 9 11 14 18.5Z"/>
+  <path fill="#D98A2B" d="M14 18.5 19 11 24 18.5Z"/>
+  <path fill="#B86F1C" d="M24 18.5 29 11 34 18.5Z"/>
+  <rect x="9" y="11" width="5" height="2" fill="#5DADEC" opacity="0.85"/>
+  <rect x="19" y="11" width="5" height="2" fill="#5DADEC" opacity="0.85"/>
+  <rect x="29" y="11" width="5" height="2" fill="#5DADEC" opacity="0.85"/>
+  <rect x="14.6" y="22.6" width="6.8" height="8.4" rx="0.6" fill="#243329"/>
+  <rect x="6.8" y="22.6" width="3.4" height="3.4" fill="#5DADEC" opacity="0.7"/>
+  <rect x="25.8" y="22.6" width="3.4" height="3.4" fill="#5DADEC" opacity="0.7"/>
+  <rect x="29.5" y="4.4" width="2" height="7.4" fill="#8B5A2B"/>
+  <path fill="#DA251D" d="M31.5 5 35 6.3 31.5 7.6Z"/>
+</svg>

@@ -146,6 +146,12 @@
       },
       "imageAlt": "Close-up of Hinoki cypress grain — TNP's signature timber, sourced from Japan and manufactured in Vietnam"
     },
+    "statement": {
+      "eyebrow": "No middlemen. No shortcuts.",
+      "line1": "Built in our factory.",
+      "line2": "Not assembled in someone else's.",
+      "sub": "Every board, every joint, every finish — made under one roof in Biên Hòa, by the same hands that ship it to your door."
+    },
     "process": {
       "title": "From raw timber to finished space",
       "leadIn": "Every TNP project follows three stages. Whether you need solid wood flooring for an apartment in Tokyo or custom furniture for a home in Saigon — the process is the same.",
@@ -177,7 +183,12 @@
       "stat1": { "value": "300+", "label": "Projects completed" },
       "stat2": { "value": "Japan & beyond", "label": "Export destinations" },
       "stat3": { "value": "Biên Hòa, Vietnam", "label": "Our factory" },
-      "testimonialNote": "{/* TODO: add real testimonials/stats */}"
+      "testimonialNote": "{/* TODO: add real testimonials/stats */}",
+      "badges": {
+        "precision": "Precision-checked",
+        "standards": "Builder's measure, honored",
+        "craft": "Time-honored craft"
+      }
     },
     "cta": {
       "title": "Ready to start?",
@@ -190,6 +201,12 @@
       "title": "Transparent pricing.",
       "titleAccent": "Flooring and furniture, end to end.",
       "subtitle": "Every TNP project covers sourcing, manufacturing, delivery, and installation where applicable. No hidden fees. Choose the product and service level that fits your project."
+    },
+    "statement": {
+      "eyebrow": "One quote. Everything included.",
+      "line1": "One price.",
+      "line2": "Every stage covered.",
+      "sub": "Sourcing, manufacturing, delivery, installation — quoted together, never piecemeal."
     },
     "tiers": {
       "title": "Our Services",
@@ -263,6 +280,11 @@
         "question": "Can I visit your factory?",
         "answer": "Absolutely. Our facility is in Tam Phước Industrial Zone, Biên Hòa — about an hour from Ho Chi Minh City. Contact us to arrange a visit and see our production process firsthand."
       }
+    },
+    "finalCta": {
+      "title": "Ready to start?",
+      "subtitle": "Tell us about your space and we'll get back within 48 hours with a free quote.",
+      "imageAlt": "Finished TNP installation at dusk"
     }
   },
   "contact": {
@@ -349,7 +371,7 @@
     "sidebar": {
       "directContact": {
         "title": "Direct contact",
-        "hours": "{/* TODO: insert business hours */}"
+        "hours": "Monday – Saturday, 8:00 AM – 5:00 PM (GMT+7)"
       },
       "nextSteps": {
         "title": "What happens next?",
@@ -360,7 +382,9 @@
       "trust": {
         "title": "Factory-direct from Vietnam",
         "text": "Every quote covers sourcing, manufacturing, delivery, and installation — one price, one team, factory-direct from Vietnam."
-      }
+      },
+      "privacyNote": "Your details are used only to discuss your project.",
+      "photoAlt": "TNP-installed solid wood flooring, finished room"
     }
   }
 }

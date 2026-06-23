@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- A cut log's growth rings, Hinoki sprig resting on top — the timber
+       itself, not a generic tree glyph -->
+  <circle cx="18" cy="20.5" r="13.5" fill="#E2C896"/>
+  <circle cx="18" cy="20.5" r="10.8" fill="none" stroke="#D9B872" stroke-width="1.1"/>
+  <circle cx="18" cy="20.5" r="8.1" fill="none" stroke="#C49A6C" stroke-width="1"/>
+  <circle cx="18" cy="20.5" r="5.4" fill="none" stroke="#B86F1C" stroke-width="0.9"/>
+  <circle cx="18" cy="20.5" r="2.4" fill="#8B5A2B"/>
+  <path stroke="#8B5A2B" stroke-width="0.6" opacity="0.5" d="M18 7v27M4.5 20.5h27"/>
+  <path fill="#5C8F5E" d="M18 8C16.4 6 15.8 3.6 17 1 18.4 3.4 19 5.8 18 8Z"/>
+  <path fill="#4F7A52" d="M16.7 8.8c-2.1-0.6-3.7-2.1-3.9-4.7 2.4 0.8 4 2.2 3.9 4.7Z"/>
+  <path fill="#7AB07C" d="M19.3 8.8c2.1-0.6 3.7-2.1 3.9-4.7-2.4 0.8-4 2.2-3.9 4.7Z"/>
+</svg>

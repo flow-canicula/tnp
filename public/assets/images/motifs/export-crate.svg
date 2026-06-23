@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Shipping crate with a destination tag — the export leg, not a
+       generic globe glyph -->
+  <path fill="#B86F1C" d="M4 11 18 5 32 11 18 17Z"/>
+  <path fill="#8B5A2B" d="M4 11v15l14 6V17Z"/>
+  <path fill="#D98A2B" d="M32 11v15l-14 6V17Z"/>
+  <path stroke="#F5E6C8" stroke-width="0.8" opacity="0.55" fill="none" d="M4 11 18 17 32 11M18 17v14"/>
+  <g transform="rotate(14 27 8)">
+    <rect x="24.4" y="4.6" width="6.4" height="4.6" rx="0.7" fill="#F5E6C8"/>
+    <circle cx="25.6" cy="6.2" r="0.6" fill="#16231C"/>
+    <line x1="24.4" y1="4.6" x2="20.5" y2="2" stroke="#8B5A2B" stroke-width="0.7"/>
+  </g>
+  <circle cx="18" cy="11" r="1.2" fill="#DA251D"/>
+</svg>

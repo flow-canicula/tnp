@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- A room cross-section: flooring underfoot, furniture inside, roof
+       overhead — the full-space project, not a generic building glyph -->
+  <path fill="#B86F1C" d="M3 14 18 4 33 14Z"/>
+  <rect x="6" y="14" width="24" height="17" fill="#F5E6C8"/>
+  <g fill="#D9B872">
+    <rect x="6" y="27" width="24" height="2.4"/>
+    <rect x="6" y="24" width="24" height="0.6"/>
+    <rect x="6" y="21" width="24" height="0.6"/>
+  </g>
+  <rect x="9" y="19" width="6.6" height="5.6" fill="#8B5A2B"/>
+  <rect x="10.3" y="20.3" width="1.6" height="2" fill="#6E4D22"/>
+  <rect x="22" y="16.5" width="4.6" height="4.6" fill="#5DADEC" opacity="0.85"/>
+  <circle cx="18" cy="9.6" r="1" fill="#FFCD00"/>
+</svg>

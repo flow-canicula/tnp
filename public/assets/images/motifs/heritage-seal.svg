@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- Heritage seal: lotus (Vietnam) rising over seigaiha waves (Japan),
+       bamboo-joint ring binding the two — TNP's two halves in one mark -->
+  <circle cx="18" cy="18" r="16" fill="#16231C"/>
+  <circle cx="18" cy="18" r="16" fill="none" stroke="#D98A2B" stroke-width="1"/>
+
+  <!-- Bamboo-joint ticks around the ring — binding motif -->
+  <g stroke="#8B5A2B" stroke-width="0.7" opacity="0.55">
+    <line x1="18" y1="2.4" x2="18" y2="4.4"/>
+    <line x1="33.6" y1="18" x2="31.6" y2="18"/>
+    <line x1="18" y1="33.6" x2="18" y2="31.6"/>
+    <line x1="2.4" y1="18" x2="4.4" y2="18"/>
+  </g>
+
+  <!-- Seigaiha wave arcs — Japanese half, lower register -->
+  <g fill="none" stroke="#B86F1C" stroke-width="1" opacity="0.85">
+    <path d="M4 25 a7 7 0 0 1 14 0"/>
+    <path d="M18 25 a7 7 0 0 1 14 0"/>
+    <path d="M-3 28 a7 7 0 0 1 14 0"/>
+    <path d="M11 28 a7 7 0 0 1 14 0"/>
+    <path d="M25 28 a7 7 0 0 1 14 0"/>
+  </g>
+
+  <!-- Lotus bloom — Vietnamese half, upper register, three fanned petals -->
+  <path fill="#7AB07C" d="M18 19C16.1 16.4 15.4 12.6 17.1 7.6 17.9 12.2 18.4 15.4 18 19Z"/>
+  <path fill="#5C8F5E" d="M18 19C20.6 17.2 23 14.2 23 9.6 20.6 12.6 19 15.6 18 19Z"/>
+  <path fill="#4F7A52" d="M18 19C15.4 17.2 13 14.2 13 9.6 15.4 12.6 17 15.6 18 19Z"/>
+
+  <!-- Center mark — union point, gold over red -->
+  <circle cx="18" cy="19.4" r="2.1" fill="#DA251D"/>
+  <path fill="#FFCD00" d="M18 17.7 18.5 19 19.8 19 18.75 19.75 19.1 21 18 20.25 16.9 21 17.25 19.75 16.2 19 17.5 19Z"/>
+</svg>

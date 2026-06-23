@@ -2,11 +2,12 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Hammer, Truck, Wrench, CheckCircle, Factory, TreePine, Handshake } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import SchemaJsonLd from '@/components/SchemaJsonLd';
 import CtaBanner from '@/components/CtaBanner';
 import Reveal from '@/components/Reveal';
 import StatCounter from '@/components/StatCounter';
+import StatementBanner from '@/components/StatementBanner';
 import { routing } from '@/i18n/routing';
 
 export function generateStaticParams() {
@@ -115,16 +116,22 @@ export default async function HomePage({
   const base = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
   const pillars = [
-    { key: 'heritage' as const, icon: Handshake },
-    { key: 'hinoki' as const, icon: TreePine },
-    { key: 'factory' as const, icon: Factory },
-    { key: 'endToEnd' as const, icon: CheckCircle },
+    { key: 'heritage' as const, motif: `${base}/assets/images/motifs/heritage-bond.svg` },
+    { key: 'hinoki' as const, motif: `${base}/assets/images/motifs/hardwood-rings.svg` },
+    { key: 'factory' as const, motif: `${base}/assets/images/motifs/factory-roofline.svg` },
+    { key: 'endToEnd' as const, motif: `${base}/assets/images/motifs/journey-link.svg` },
   ];
 
   const processSteps = [
-    { key: 'creation' as const, icon: Hammer, image: `${base}/assets/images/creation/creation.jpg` },
-    { key: 'delivery' as const, icon: Truck, image: `${base}/assets/images/installation/installation-2.jpg` },
-    { key: 'installation' as const, icon: Wrench, image: `${base}/assets/images/installation/installation-1.jpg` },
+    { key: 'creation' as const, image: `${base}/assets/images/creation/creation.jpg`, motif: `${base}/assets/images/motifs/blueprint-seal.svg` },
+    { key: 'delivery' as const, image: `${base}/assets/images/installation/installation-2.jpg`, motif: `${base}/assets/images/motifs/documentation.svg` },
+    { key: 'installation' as const, image: `${base}/assets/images/installation/installation-1.jpg`, motif: `${base}/assets/images/motifs/installation.svg` },
+  ];
+
+  const trustBadges = [
+    { src: `${base}/assets/images/motifs/compass-seal.svg`, label: h.trust.badges.precision },
+    { src: `${base}/assets/images/motifs/luban-ruler.svg`, label: h.trust.badges.standards },
+    { src: `${base}/assets/images/motifs/watch-drum.svg`, label: h.trust.badges.craft },
   ];
 
   return (
@@ -202,9 +209,10 @@ export default async function HomePage({
                 {h.about.narrative}
               </p>
               <dl className="grid sm:grid-cols-2 gap-4">
-                {pillars.map(({ key, icon: Icon }) => (
+                {pillars.map(({ key, motif }) => (
                   <div key={key} className="flex gap-3 p-4 rounded-xl bg-white border border-cream-200">
-                    <Icon className="w-5 h-5 text-timber-500 mt-0.5 shrink-0" aria-hidden="true" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={motif} alt="" aria-hidden="true" className="w-9 h-9 shrink-0" />
                     <div>
                       <dt className="font-semibold text-forest-900 text-sm mb-0.5">
                         {h.about.pillars[key].title}
@@ -237,6 +245,13 @@ export default async function HomePage({
         </div>
       </section>
 
+      {/* Section: Bold Statement */}
+      <StatementBanner
+        eyebrow={h.statement.eyebrow}
+        lines={[h.statement.line1, h.statement.line2]}
+        sub={h.statement.sub}
+      />
+
       {/* Section: Process */}
       <section id="process" className="section-padding bg-white">
         <div className="container-wide">
@@ -249,7 +264,7 @@ export default async function HomePage({
           </Reveal>
 
           <ol className="flex flex-col gap-24">
-            {processSteps.map(({ key, icon: Icon, image }, idx) => (
+            {processSteps.map(({ key, image, motif }, idx) => (
               <li key={key} className={`grid lg:grid-cols-2 gap-12 items-center ${idx % 2 === 1 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
                 <Reveal direction={idx % 2 === 1 ? 'right' : 'left'}>
                   <div className="flex items-center gap-3 mb-4">
@@ -258,7 +273,8 @@ export default async function HomePage({
                     </span>
                     <div className="w-px h-10 bg-cream-200" />
                     <div className="flex items-center gap-2">
-                      <Icon className="w-5 h-5 text-timber-500" aria-hidden="true" />
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={motif} alt="" aria-hidden="true" className="w-6 h-6" />
                       <span className="section-label">{h.process.steps[key].label}</span>
                     </div>
                   </div>
@@ -276,6 +292,10 @@ export default async function HomePage({
                       className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />
+                    <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-forest-950/70 backdrop-blur-sm p-2 shadow-lg">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={motif} alt="" aria-hidden="true" className="w-full h-full" />
+                    </div>
                   </figure>
                 </Reveal>
               </li>
@@ -293,6 +313,16 @@ export default async function HomePage({
             ))}
           </div>
           {/* TODO: add real testimonials/stats */}
+
+          <div className="mt-14 pt-10 border-t border-white/20 flex flex-wrap justify-center gap-x-10 gap-y-6">
+            {trustBadges.map(({ src, label }, i) => (
+              <Reveal key={label} delay={i * 0.1} className="flex items-center gap-3">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={src} alt="" aria-hidden="true" className="w-8 h-8 shrink-0" />
+                <span className="text-white text-sm font-medium">{label}</span>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Mail, Phone, MapPin } from 'lucide-react';
 import LanguageSwitcher from './LanguageSwitcher';
 
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
@@ -237,9 +236,9 @@ export default function Footer({ locale, messages }: FooterProps) {
           {/* Ground */}
           <rect x="0" y="312" width="1440" height="88" fill="#070504" />
 
-          {/* Floating lanterns — đèn lồng in the dusk sky */}
-          {LANTERNS.map(({ cx, cy, r }) => (
-            <g key={`${cx}-${cy}`}>
+          {/* Floating lanterns — đèn lồng in the dusk sky, gently pulsing */}
+          {LANTERNS.map(({ cx, cy, r }, i) => (
+            <g key={`${cx}-${cy}`} className="animate-glow-pulse" style={{ animationDelay: `${i * 0.4}s` }}>
               {/* Soft glow halo */}
               <circle cx={cx} cy={cy} r={r * 3.5} fill="url(#lanternGlow)" />
               {/* Lantern body */}
@@ -361,25 +360,29 @@ export default function Footer({ locale, messages }: FooterProps) {
             </h3>
             <ul className="flex flex-col gap-3">
               <li className="flex items-start gap-2.5">
-                <Mail className="w-4 h-4 text-timber-700 mt-0.5 shrink-0" aria-hidden="true" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`${base}/assets/images/motifs/envelope-seal.svg`} alt="" aria-hidden="true" className="w-4 h-4 mt-0.5 shrink-0 opacity-90" />
                 <a href="mailto:thuyken52914@yahoo.com.vn" className="text-stone-600 hover:text-timber-400 text-sm transition-colors">
                   thuyken52914@yahoo.com.vn
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
-                <Mail className="w-4 h-4 text-timber-700 mt-0.5 shrink-0" aria-hidden="true" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`${base}/assets/images/motifs/envelope-seal.svg`} alt="" aria-hidden="true" className="w-4 h-4 mt-0.5 shrink-0 opacity-90" />
                 <a href="mailto:thuy@tnpgr.vn" className="text-stone-600 hover:text-timber-400 text-sm transition-colors">
                   thuy@tnpgr.vn
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
-                <Phone className="w-4 h-4 text-timber-700 mt-0.5 shrink-0" aria-hidden="true" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`${base}/assets/images/motifs/hand-bell.svg`} alt="" aria-hidden="true" className="w-4 h-4 mt-0.5 shrink-0 opacity-90" />
                 <a href="tel:+84903333729" className="text-stone-600 hover:text-timber-400 text-sm transition-colors">
                   +84 90 333 37 29
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-timber-700 mt-0.5 shrink-0" aria-hidden="true" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`${base}/assets/images/motifs/viet-pin.svg`} alt="" aria-hidden="true" className="w-4 h-4 mt-0.5 shrink-0 opacity-90" />
                 <span className="text-stone-600 text-sm leading-relaxed">{f.contact.address}</span>
               </li>
             </ul>

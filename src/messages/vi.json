@@ -146,6 +146,12 @@
       },
       "imageAlt": "Cận cảnh vân gỗ Hinoki — nguyên liệu đặc trưng của TNP, nhập từ Nhật Bản và sản xuất tại Việt Nam"
     },
+    "statement": {
+      "eyebrow": "Không trung gian. Không đường tắt.",
+      "line1": "Sản xuất tại nhà máy của chúng tôi.",
+      "line2": "Không phải lắp ráp ở nơi khác.",
+      "sub": "Từng tấm ván, từng mối ghép, từng lớp hoàn thiện — đều làm dưới một mái nhà ở Biên Hòa, bởi chính những người giao hàng đến tay bạn."
+    },
     "process": {
       "title": "Từ gỗ thô đến không gian hoàn thiện",
       "leadIn": "Mọi dự án của TNP đều trải qua ba giai đoạn. Dù bạn cần sàn gỗ tự nhiên cho căn hộ ở Tokyo hay nội thất đặt riêng cho ngôi nhà ở Sài Gòn — quy trình luôn nhất quán.",
@@ -177,7 +183,12 @@
       "stat1": { "value": "300+", "label": "Dự án đã hoàn thành" },
       "stat2": { "value": "Nhật Bản & quốc tế", "label": "Thị trường xuất khẩu" },
       "stat3": { "value": "Biên Hòa, Việt Nam", "label": "Xưởng sản xuất" },
-      "testimonialNote": "{/* TODO: thêm đánh giá thực tế từ khách hàng */}"
+      "testimonialNote": "{/* TODO: thêm đánh giá thực tế từ khách hàng */}",
+      "badges": {
+        "precision": "Kiểm tra chính xác từng chi tiết",
+        "standards": "Theo chuẩn thước Lỗ Ban",
+        "craft": "Tay nghề được giữ qua nhiều thế hệ"
+      }
     },
     "cta": {
       "title": "Sẵn sàng bắt đầu?",
@@ -190,6 +201,12 @@
       "title": "Bảng giá minh bạch.",
       "titleAccent": "Sàn gỗ và nội thất, trọn gói.",
       "subtitle": "Mọi dự án TNP đều bao gồm tìm nguồn nguyên liệu, sản xuất, vận chuyển và lắp đặt. Không phát sinh chi phí ẩn. Chọn sản phẩm và mức dịch vụ phù hợp với dự án của bạn."
+    },
+    "statement": {
+      "eyebrow": "Một báo giá. Trọn vẹn mọi công đoạn.",
+      "line1": "Một mức giá.",
+      "line2": "Đầy đủ mọi giai đoạn.",
+      "sub": "Tìm nguyên liệu, sản xuất, vận chuyển, lắp đặt — báo giá chung một lần, không tính rời từng phần."
     },
     "tiers": {
       "title": "Dịch vụ của chúng tôi",
@@ -263,6 +280,11 @@
         "question": "Tôi có thể tham quan xưởng không?",
         "answer": "Hoàn toàn được. Xưởng của chúng tôi nằm tại KCN Tam Phước, Biên Hòa — khoảng một tiếng từ TP.HCM. Liên hệ để đặt lịch tham quan và tận mắt chứng kiến quy trình sản xuất."
       }
+    },
+    "finalCta": {
+      "title": "Sẵn sàng bắt đầu?",
+      "subtitle": "Hãy cho chúng tôi biết về không gian của bạn, chúng tôi sẽ phản hồi trong 48 giờ kèm báo giá miễn phí.",
+      "imageAlt": "Công trình TNP đã hoàn thiện lúc chạng vạng"
     }
   },
   "contact": {
@@ -349,7 +371,7 @@
     "sidebar": {
       "directContact": {
         "title": "Liên hệ trực tiếp",
-        "hours": "{/* TODO: thêm giờ làm việc */}"
+        "hours": "Thứ Hai – Thứ Bảy, 8:00 – 17:00 (GMT+7)"
       },
       "nextSteps": {
         "title": "Chuyện gì xảy ra tiếp theo?",
@@ -360,7 +382,9 @@
       "trust": {
         "title": "Trực tiếp từ xưởng Việt Nam",
         "text": "Mỗi báo giá bao gồm tìm nguồn nguyên liệu, sản xuất, vận chuyển và lắp đặt — một mức giá, một đội ngũ, trực tiếp từ xưởng Việt Nam."
-      }
+      },
+      "privacyNote": "Thông tin của bạn chỉ được dùng để trao đổi về dự án.",
+      "photoAlt": "Sàn gỗ tự nhiên do TNP lắp đặt, không gian đã hoàn thiện"
     }
   }
 }

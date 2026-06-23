@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <!-- A folded letter closed with a wax seal — written correspondence,
+       not a generic mail glyph -->
+  <path fill="#E2C896" d="M4 11h28v18H4Z"/>
+  <path fill="#D9B872" d="M4 11 18 21 32 11Z"/>
+  <path fill="#C49A6C" d="M4 29 14.5 19.5 4 11Z"/>
+  <path fill="#C49A6C" d="M32 29 21.5 19.5 32 11Z"/>
+  <circle cx="18" cy="19.5" r="4.4" fill="#DA251D"/>
+  <path fill="#FFCD00" d="M18 16.6 19 18.7 21.3 18.9 19.6 20.4 20.1 22.6 18 21.4 15.9 22.6 16.4 20.4 14.7 18.9 17 18.7Z"/>
+</svg>
