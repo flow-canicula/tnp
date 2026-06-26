@@ -53,7 +53,10 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
       'Hinoki cypress', 'Keyaki zelkova', 'Wood manufacturing',
       'Flooring installation', 'Furniture design',
     ],
-    sameAs: ['https://www.facebook.com/Thinhnguyenphat.traocamgiacbinhyen'],
+    sameAs: [
+      process.env.NEXT_PUBLIC_FACEBOOK_URL ?? 'https://www.facebook.com/Thinhnguyenphat.traocamgiacbinhyen',
+      process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? 'https://www.instagram.com/thinhnguyenphattnp/',
+    ],
   };
 
   const websiteSchema = {
@@ -97,7 +100,10 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
         closes: '17:30',
       },
     ],
-    sameAs: ['https://www.facebook.com/Thinhnguyenphat.traocamgiacbinhyen'],
+    sameAs: [
+      process.env.NEXT_PUBLIC_FACEBOOK_URL ?? 'https://www.facebook.com/Thinhnguyenphat.traocamgiacbinhyen',
+      process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? 'https://www.instagram.com/thinhnguyenphattnp/',
+    ],
   };
 
   return (

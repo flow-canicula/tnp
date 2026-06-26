@@ -147,7 +147,7 @@ before going live:
 - [ ] Business hours (`src/messages/*.json` — `contact.sidebar.directContact.hours`)
 - [ ] Trust certifications / badges (`Footer.tsx`) — FSC, ISO, JAS, export licences
 - [ ] Real testimonials or client stats (`home.trust`)
-- [ ] Social media URLs (`Footer.tsx`)
+- [x] Social media URLs — Facebook (`NEXT_PUBLIC_FACEBOOK_URL`) and Instagram (`NEXT_PUBLIC_INSTAGRAM_URL`) set in `.env.production`; consumed in `Footer.tsx` and schema `sameAs`
 - [x] Formspree endpoint — set via `NEXT_PUBLIC_FORMSPREE_ID` in `.env.production` (form ID `mpqeyjea`). To change accounts, update only the env var — no source code change needed.
 - [x] OG images per locale — `og-en.jpg`, `og-vi.jpg`, `og-ja.jpg` in `public/assets/og/` (currently duplicated from `og-default.png`; replace with locale-specific artwork when available)
 - [x] PNG favicon for Google search results — `favicon-192.png` and `favicon-512.png` in `public/assets/favicon/`, registered in `site.webmanifest` and `metadata.icons`.
