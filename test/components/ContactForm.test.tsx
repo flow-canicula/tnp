@@ -38,6 +38,7 @@ const messages = {
 describe('ContactForm', () => {
   beforeEach(() => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true }));
+    process.env.NEXT_PUBLIC_FORMSPREE_ID = 'mpqeyjea';
   });
 
   it('renders name and email text inputs', () => {

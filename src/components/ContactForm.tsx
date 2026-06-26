@@ -187,7 +187,7 @@ export default function ContactForm({ locale, messages: m }: ContactFormProps) {
     data.append('timber_preference', timberSelected.join(', '));
     data.append('locale', locale);
     try {
-      const res = await fetch('https://formspree.io/f/mpqeyjea', {
+      const res = await fetch(`https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID}`, {
         method: 'POST', body: data, headers: { Accept: 'application/json' },
       });
       if (res.ok) setSubmitted(true);

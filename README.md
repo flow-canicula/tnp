@@ -1,8 +1,10 @@
 # TNP Website
 
-Marketing site for **TNP** — a Japanese-Vietnamese solid wood flooring and
-timber furniture manufacturer, built in Vietnam (Tam Phước Industrial Zone,
-Biên Hòa) and exporting to Japan and international markets.
+Marketing site for **TNP** (Thịnh Nguyên Phát Wooden Co., Ltd. / Công ty TNHH Thịnh Nguyên Phát) —
+a Japanese family-owned solid wood manufacturer established in Vietnam in 1997.
+Factory: Tam Phước Industrial Zone, Biên Hòa. Products: solid wood flooring,
+interior & exterior doors, folding & sliding doors, stairs. Exporting to Japan,
+Korea (laminated freeboard, 20+ years), and the USA (knotty alder doors).
 
 Tagline: **"Supplying solid wood flooring and timber furniture."**
 
@@ -82,13 +84,15 @@ failing test or a coverage regression blocks the deploy.
 /
 ├── public/
 │   ├── assets/
-│   │   ├── images/          # All real client photos (flooring, furniture, portfolio, etc.)
+│   │   ├── images/          # All real client photos (flooring, doors, stairs, portfolio, etc.)
 │   │   ├── images/motifs/   # SVG decorative motifs (heritage-seal, compass-seal, viet-pin, etc.)
 │   │   ├── logo/            # TNP logo SVG + PNG
 │   │   ├── og/              # OpenGraph images (1200×630)
-│   │   └── favicon/
-│   ├── robots.txt
-│   └── sitemap.xml
+│   │   └── favicon/         # favicon.ico, site.webmanifest (add favicon-192.png for Google)
+│   ├── favicon.ico          # Root-level copy — Google checks /favicon.ico before <link> tags
+│   ├── llms.txt             # AI agent context file (llmstxt.org standard)
+│   ├── robots.txt           # Allows all major search + AI crawlers; references sitemap + llms.txt
+│   └── sitemap.xml          # 9 URLs: 3 pages × 3 locales, with hreflang alternates
 ├── src/
 │   ├── app/[locale]/        # Dynamic locale segment (en | vi | ja)
 │   ├── components/          # Shared + page-specific client components
@@ -144,8 +148,9 @@ before going live:
 - [ ] Trust certifications / badges (`Footer.tsx`) — FSC, ISO, JAS, export licences
 - [ ] Real testimonials or client stats (`home.trust`)
 - [ ] Social media URLs (`Footer.tsx`)
-- [ ] Formspree endpoint (`ContactForm.tsx`) — confirm it is the client's account
-- [ ] OG images per locale (`public/assets/og/og-en.jpg`, `og-vi.jpg`, `og-ja.jpg`)
+- [x] Formspree endpoint — set via `NEXT_PUBLIC_FORMSPREE_ID` in `.env.production` (form ID `mpqeyjea`). To change accounts, update only the env var — no source code change needed.
+- [x] OG images per locale — `og-en.jpg`, `og-vi.jpg`, `og-ja.jpg` in `public/assets/og/` (currently duplicated from `og-default.png`; replace with locale-specific artwork when available)
+- [x] PNG favicon for Google search results — `favicon-192.png` and `favicon-512.png` in `public/assets/favicon/`, registered in `site.webmanifest` and `metadata.icons`.
 
 ## Security
 
