@@ -9,6 +9,14 @@ export const metadata: Metadata = {
   title: 'TNP — Premium Solid Wood Flooring & Custom Timber Furniture | Biên Hòa, Vietnam',
   description: 'Factory-direct solid wood flooring and custom timber furniture. Keyaki, Hinoki, oak, walnut — manufactured to the highest Japanese standards in our own facility in Biên Hòa, Vietnam. Serving Vietnam, Japan, and international buyers.',
   manifest: `${base}/assets/favicon/site.webmanifest`,
+  icons: {
+    icon: [
+      { url: `${base}/favicon.ico`, sizes: 'any' },
+      { url: `${base}/assets/favicon/favicon.ico`, sizes: '48x48 32x32 16x16', type: 'image/x-icon' },
+    ],
+    shortcut: `${base}/favicon.ico`,
+    apple: `${base}/assets/favicon/favicon.ico`,
+  },
   openGraph: {
     title: 'TNP — Premium Solid Wood Flooring & Custom Timber Furniture',
     description: 'Factory-direct solid wood flooring and custom timber furniture. Keyaki, Hinoki, oak, walnut — manufactured in our own facility in Biên Hòa, Vietnam.',
@@ -28,10 +36,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href={`${base}/assets/favicon/favicon.ico`} sizes="any" />
-        <link rel="shortcut icon" href={`${base}/assets/favicon/favicon.ico`} />
-      </head>
       <body suppressHydrationWarning>{children}</body>
     </html>
   );
