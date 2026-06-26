@@ -7,17 +7,19 @@ describe('RootLayout', () => {
     expect(metadata.description).toBe('Factory-direct solid wood flooring and custom timber furniture. Keyaki, Hinoki, oak, walnut — manufactured to the highest Japanese standards in our own facility in Biên Hòa, Vietnam. Serving Vietnam, Japan, and international buyers.');
   });
 
-  it('wraps children in an <html lang="en"> / <body> shell with favicon links', () => {
+  it('wraps children in an <html lang="en"> / <body> shell', () => {
     const element = RootLayout({ children: 'hello' });
     expect(element.type).toBe('html');
     expect(element.props.lang).toBe('en');
 
-    const [head, body] = element.props.children as React.ReactElement[];
-    expect(head.type).toBe('head');
+    const body = element.props.children as React.ReactElement;
     expect(body.type).toBe('body');
     expect(body.props.children).toBe('hello');
+  });
 
-    const icons = head.props.children as React.ReactElement[];
-    expect(icons[0].props.href).toContain('/assets/favicon/favicon.ico');
+  it('declares favicon via metadata.icons', () => {
+    const icons = metadata.icons as { icon: { url: string }[]; shortcut: string };
+    expect(icons.icon[0].url).toContain('favicon.ico');
+    expect(icons.shortcut).toContain('favicon.ico');
   });
 });
