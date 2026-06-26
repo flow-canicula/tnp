@@ -143,8 +143,8 @@ GitHub's IPs (apex `A` records) or the GitHub Pages subdomain (`www` `CNAME`).
 Several values are intentionally left as `TODO` — search the repo for `TODO`
 before going live:
 
-- [ ] Pricing and budget ranges (`PricingPageClient.tsx`, `ContactForm.tsx`)
-- [ ] Business hours (`src/messages/*.json` — `contact.sidebar.directContact.hours`)
+- [x] Pricing and budget ranges (`PricingPageClient.tsx`, `ContactForm.tsx`)
+- [x] Business hours — Monday – Saturday, 8:00 AM – 5:00 PM (GMT+7) (`src/messages/*.json` — `contact.sidebar.directContact.hours`)
 - [ ] Trust certifications / badges (`Footer.tsx`) — FSC, ISO, JAS, export licences
 - [ ] Real testimonials or client stats (`home.trust`)
 - [x] Social media URLs — Facebook (`NEXT_PUBLIC_FACEBOOK_URL`) and Instagram (`NEXT_PUBLIC_INSTAGRAM_URL`) set in `.env.production`; consumed in `Footer.tsx` and schema `sameAs`
@@ -159,4 +159,4 @@ See [SECURITY.md](SECURITY.md) for the vulnerability reporting policy.
 ## Author
 
 Jaime Canicula ([jaimecanicula@gmail.com](mailto:jaimecanicula@gmail.com)) —
-freelance frontend engineer, building for TNP in Vietnam.
+freelance software architect and engineer, building for TNP in Vietnam.
