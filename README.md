@@ -116,27 +116,9 @@ per-page via `generateMetadata`.
 
 ## Deployment
 
-**GitHub Pages**: `.github/workflows/deploy.yml` runs the test suite, builds,
-and publishes `out/` to GitHub Pages on every push to `main`, using a
-`basePath` of `/tnp` (set via `NEXT_PUBLIC_BASE_PATH`, only used in that
-workflow). Enable Pages once per repo: **Settings → Pages → Source: GitHub
-Actions**.
+**Vercel** (primary): push to `main` and Vercel deploys automatically. The site is served as a static export from the project's domain root (no base path). `vercel.json` sets cache headers only; Vercel's native Next.js + `output: 'export'` support handles the rest. `NEXT_PUBLIC_SITE_URL` and canonical/OG URLs resolve dynamically from the deployment context (see `src/lib/siteUrl.ts`).
 
-**Vercel**: the repo also deploys to Vercel as a static export, serving from
-the project's domain root (no base path) — same as a custom-domain GitHub
-Pages setup. `vercel.json` only sets cache headers; Vercel's native
-Next.js + `output: 'export'` support handles the rest. `NEXT_PUBLIC_SITE_URL`
-and canonical/OG URLs resolve dynamically from the deployment context
-(see `src/lib/siteUrl.ts`).
-
-**Custom domain** (e.g. `tnpgr.vn`) on GitHub Pages: add a `CNAME` file to
-`public/`, drop `NEXT_PUBLIC_BASE_PATH` from the workflow, and point DNS at
-GitHub's IPs (apex `A` records) or the GitHub Pages subdomain (`www` `CNAME`).
-
-**Hostinger**: run `npm run build` locally to produce `out/`, then upload
-`out/` to `public_html/` via hPanel File Manager or FTP. The included
-`public/.htaccess` handles HTTPS redirect, trailing-slash normalisation,
-`ErrorDocument 404`, and cache-control headers for `/assets/`.
+**GitHub Pages** (secondary / CI preview): `.github/workflows/deploy.yml` runs the test suite, builds, and publishes `out/` to GitHub Pages on every push to `main`, using a `basePath` of `/tnp` (set via `NEXT_PUBLIC_BASE_PATH`, only used in that workflow). Enable Pages once per repo: **Settings → Pages → Source: GitHub Actions**.
 
 ## Pre-launch checklist
 
