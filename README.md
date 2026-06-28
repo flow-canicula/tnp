@@ -1,8 +1,8 @@
 # TNP Website
 
-Marketing site for **TNP** (Thịnh Nguyên Phát Wooden Co., Ltd. / Công ty TNHH Thịnh Nguyên Phát) —
-a Japanese family-owned solid wood manufacturer established in Vietnam in 1997.
-Factory: Tam Phước Industrial Zone, Biên Hòa. Products: solid wood flooring,
+Marketing site for **TNP Wood** (Thịnh Nguyên Phát Wooden Co., Ltd. / Công ty TNHH Thịnh Nguyên Phát) —
+an international solid wood manufacturer, Japanese family-owned, established in Vietnam in 1997.
+Factory: 9,950 m² facility, Tam Phước Industrial Zone, Biên Hòa. Products: solid wood flooring,
 interior & exterior doors, folding & sliding doors, stairs. Exporting to Japan,
 Korea (laminated freeboard, 20+ years), and the USA (knotty alder doors).
 

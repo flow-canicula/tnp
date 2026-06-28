@@ -2,10 +2,11 @@
 
 ## About This Project
 
-TNP's website is a **fully static export** — HTML, CSS, and JavaScript files
-served from **Vercel**. There is no server runtime, no database, no
-authentication system, and no admin panel. The attack surface is intentionally
-minimal.
+TNP Wood's website is a **fully static export** — HTML, CSS, and JavaScript files
+served from **Vercel**. TNP (Thịnh Nguyên Phát Wooden Co., Ltd.) is an
+international solid wood manufacturer, Japanese family-owned, based in Biên Hòa,
+Vietnam. There is no server runtime, no database, no authentication system, and
+no admin panel. The attack surface is intentionally minimal.
 
 The contact/quote form submits to **Formspree**, a third-party static form
 service. No form data touches our infrastructure.
