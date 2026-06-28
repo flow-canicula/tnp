@@ -383,8 +383,8 @@ export default function Footer({ locale, messages }: FooterProps) {
               <li className="flex items-start gap-2.5">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={`${base}/assets/images/motifs/envelope-seal.svg`} alt="" aria-hidden="true" className="w-4 h-4 mt-0.5 shrink-0 opacity-90" />
-                <a href="mailto:thuyken52914@yahoo.com.vn" className="text-stone-600 hover:text-timber-400 text-sm transition-colors">
-                  thuyken52914@yahoo.com.vn
+                <a href="mailto:anhkiet3333@yahoo.com" className="text-stone-600 hover:text-timber-400 text-sm transition-colors">
+                  anhkiet3333@yahoo.com
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
