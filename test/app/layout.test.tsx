@@ -20,7 +20,8 @@ describe('RootLayout', () => {
 
   it('declares favicon via metadata.icons', () => {
     const icons = metadata.icons as { icon: { url: string }[]; shortcut: string };
-    expect(icons.icon[0].url).toContain('favicon-192.png');
+    expect(icons.icon[0].url).toContain('favicon.ico');
+    expect(icons.icon[1].url).toContain('favicon-192.png');
     expect(icons.shortcut).toContain('favicon.ico');
   });
 });
