@@ -3,8 +3,8 @@ import RootLayout, { metadata } from '@/app/layout';
 
 describe('RootLayout', () => {
   it('declares the site-wide metadata', () => {
-    expect(metadata.title).toBe('TNP — Premium Solid Wood Flooring & Custom Timber Furniture | Biên Hòa, Vietnam');
-    expect(metadata.description).toBe('Factory-direct solid wood flooring and custom timber furniture. Keyaki, Hinoki, oak, walnut — manufactured to the highest Japanese standards in our own facility in Biên Hòa, Vietnam. Serving Vietnam, Japan, and international buyers.');
+    expect(metadata.title).toBe('TNP Wood — International Solid Wood Manufacturer | Vietnam');
+    expect(metadata.description).toBe('International solid wood manufacturer in Vietnam. Japanese family-owned since 1997. Solid wood flooring, doors, and stairs — exporting to Japan, Korea, the USA, and worldwide from our 9,950 m² factory in Biên Hòa.');
   });
 
   it('wraps children in an <html lang="en"> / <body> shell', () => {

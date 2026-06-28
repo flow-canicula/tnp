@@ -7,8 +7,8 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://tnp.skaldris.com';
 
 export const metadata: Metadata = {
-  title: 'TNP — Premium Solid Wood Flooring & Custom Timber Furniture | Biên Hòa, Vietnam',
-  description: 'Factory-direct solid wood flooring and custom timber furniture. Keyaki, Hinoki, oak, walnut — manufactured to the highest Japanese standards in our own facility in Biên Hòa, Vietnam. Serving Vietnam, Japan, and international buyers.',
+  title: 'TNP Wood — International Solid Wood Manufacturer | Vietnam',
+  description: 'International solid wood manufacturer in Vietnam. Japanese family-owned since 1997. Solid wood flooring, doors, and stairs — exporting to Japan, Korea, the USA, and worldwide from our 9,950 m² factory in Biên Hòa.',
   manifest: `${base}/assets/favicon/site.webmanifest`,
   icons: {
     icon: [
@@ -20,17 +20,17 @@ export const metadata: Metadata = {
     apple: { url: `${base}/assets/favicon/favicon-192.png`, sizes: '192x192', type: 'image/png' },
   },
   openGraph: {
-    title: 'TNP — Premium Solid Wood Flooring & Custom Timber Furniture',
-    description: 'Factory-direct solid wood flooring and custom timber furniture. Keyaki, Hinoki, oak, walnut — manufactured in our own facility in Biên Hòa, Vietnam.',
+    title: 'TNP Wood — International Solid Wood Manufacturer | Vietnam',
+    description: 'International solid wood manufacturer in Vietnam since 1997. Solid wood flooring, doors, and stairs — Japanese family-owned, exporting to Japan, Korea, the USA, and worldwide.',
     url: siteUrl,
     siteName: 'TNP Wood',
     type: 'website',
-    images: [{ url: `${siteUrl}/assets/og/og-default.png`, width: 1200, height: 630, alt: 'TNP — Solid Wood Flooring & Timber Furniture' }],
+    images: [{ url: `${siteUrl}/assets/og/og-default.png`, width: 1200, height: 630, alt: 'TNP Wood — International Solid Wood Manufacturer, Vietnam' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TNP — Premium Solid Wood Flooring & Custom Timber Furniture',
-    description: 'Factory-direct solid wood flooring and custom timber furniture from Biên Hòa, Vietnam.',
+    title: 'TNP Wood — International Solid Wood Manufacturer | Vietnam',
+    description: 'International solid wood manufacturer in Vietnam. Japanese-owned since 1997. Exporting flooring, doors, and stairs to Japan, Korea, the USA, and worldwide.',
     images: [`${siteUrl}/assets/og/og-default.png`],
   },
 };
