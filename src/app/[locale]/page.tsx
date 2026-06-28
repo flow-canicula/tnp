@@ -137,58 +137,101 @@ export default async function HomePage({
       <SchemaJsonLd schema={servicesSchema} />
 
       {/* Section: Hero */}
-      <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-forest-900">
+      <section className="relative min-h-[85svh] sm:min-h-[92vh] flex items-end sm:items-center overflow-hidden bg-forest-950">
+        {/* Background image — focal point shifted right so staircase + doors are centred on all screens */}
         <div className="absolute inset-0">
           <Image
-            src={`${base}/assets/images/portfolio/portfolio-1.jpg`}
+            src={`${base}/assets/images/portfolio/stair-grand-curved-hall.jpg`}
             alt={h.hero.imageAlt}
             fill
             priority
-            className="object-cover object-center opacity-40 animate-ken-burns"
+            className="object-cover object-[65%_center] sm:object-[60%_center] lg:object-center opacity-55 animate-ken-burns"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-forest-950/80 via-forest-900/60 to-transparent" />
+
+          {/* Mobile: heavy bottom-up scrim so text at bottom is always legible */}
+          <div className="absolute inset-0 bg-gradient-to-t from-forest-950/95 via-forest-950/60 to-forest-950/20 sm:hidden" />
+
+          {/* Desktop: diagonal scrim — dark on left where text sits, fades right */}
+          <div className="absolute inset-0 hidden sm:block bg-gradient-to-r from-forest-950/90 via-forest-950/65 to-forest-950/10" />
+
+          {/* Subtle warm vignette around all edges */}
+          <div className="absolute inset-0 shadow-[inset_0_0_120px_rgba(15,14,12,0.55)]" />
         </div>
 
-        <div className="relative container-wide py-24">
-          <div className="max-w-2xl">
-            <p className="section-label text-timber-300 mb-6 animate-drift-up" style={{ animationDelay: '0.1s' }}>
-              TNP — Biên Hòa, Vietnam
-            </p>
+        {/* Timber accent bar — left edge on desktop, top edge on mobile */}
+        <div className="absolute left-0 top-0 bottom-0 w-1 hidden sm:block bg-gradient-to-b from-transparent via-timber-400 to-transparent opacity-70" />
+        <div className="absolute top-0 left-0 right-0 h-0.5 sm:hidden bg-gradient-to-r from-transparent via-timber-400 to-transparent opacity-60" />
+
+        <div className="relative container-wide py-16 sm:py-24 pb-12 sm:pb-24">
+          <div className="max-w-xl lg:max-w-2xl">
+            {/* Eyebrow */}
+            <div
+              className="flex items-center gap-3 mb-5 animate-drift-up"
+              style={{ animationDelay: '0.1s' }}
+            >
+              <span className="h-px w-8 bg-timber-400 opacity-80" />
+              <p className="section-label text-timber-300">
+                TNP — Biên Hòa, Vietnam
+              </p>
+            </div>
+
+            {/* Headline */}
             <h1
-              className="font-serif text-display-xl text-white leading-tight mb-2 animate-drift-up"
+              className="font-serif text-display-xl text-white leading-tight mb-3 animate-drift-up"
               style={{ animationDelay: '0.25s' }}
             >
               {h.hero.title}
             </h1>
+
+            {/* Accent line */}
             <p
-              className="font-serif text-display-md text-timber-300 mb-8 animate-drift-up"
+              className="font-serif text-display-md text-timber-300 mb-7 animate-drift-up"
               style={{ animationDelay: '0.4s' }}
             >
               {h.hero.titleAccent}
             </p>
+
+            {/* Divider */}
+            <div
+              className="w-12 h-px bg-timber-500 mb-7 animate-drift-up"
+              style={{ animationDelay: '0.48s' }}
+            />
+
+            {/* Subtitle */}
             <p
-              className="text-cream-200 text-lg leading-relaxed mb-10 max-w-xl animate-drift-up"
+              className="text-cream-200/90 text-base sm:text-lg leading-relaxed mb-9 max-w-lg animate-drift-up"
               style={{ animationDelay: '0.55s' }}
             >
               {h.hero.subtitle}
             </p>
+
+            {/* CTAs */}
             <div
-              className="flex flex-wrap items-center gap-4 animate-drift-up"
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 animate-drift-up"
               style={{ animationDelay: '0.7s' }}
             >
               <Link
                 href={`/${locale}/contact`}
-                className="btn-primary text-base px-8 py-3.5 transition-transform duration-300 hover:scale-105"
+                className="btn-primary text-sm sm:text-base px-7 py-3.5 transition-transform duration-300 hover:scale-105 w-full sm:w-auto justify-center"
               >
                 {cta.startProject}
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
-              <a href="#process" className="btn-ghost text-cream-200 hover:text-white">
+              <a
+                href="#process"
+                className="btn-ghost text-cream-200/80 hover:text-white px-0 sm:px-4 text-sm sm:text-base"
+              >
                 {cta.seeHowItWorks}
               </a>
             </div>
           </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-1.5 opacity-40 animate-float">
+          <div className="w-px h-8 bg-cream-200" />
+          <div className="w-1 h-1 rounded-full bg-cream-200" />
         </div>
       </section>
 
